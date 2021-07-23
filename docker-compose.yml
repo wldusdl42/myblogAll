@@ -1,1 +1,15 @@
-aa
+version: '3' // 파일 규격 버전
+services: // 컨테이너들을 정의
+    web:
+        build:
+            context: ./myblog_front
+            dockerfile: Dockerfile
+        ports:
+            - "8080:8080"
+    # 웹 애플리케이션 설정
+    db:
+    # 데이터베이스 설정
+networks:
+  # 네트워크 설정
+volumes:
+  # 볼륨 설정

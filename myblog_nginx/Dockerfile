@@ -1,10 +1,3 @@
-FROM node:12.16.0-alpine
+FROM nginx-alpine
 MAINTAINER Jiyeon Kim <wldusdl34@gmail.com>
-
-# Create app directory
-WORKDIR /usr/src/app
-
-COPY . .
-
-EXPOSE 80
-CMD ["node", "test.js"]
+COPY static-html-directory /usr/share/nginx/html
