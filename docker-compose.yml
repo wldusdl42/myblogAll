@@ -3,7 +3,7 @@ services:
   front:
     container_name: react
     image: wldusdl34/myblogfront:latest
-    build: .
+    build: ./myblog_front/
     restart: always
     ports:
     - "8080:8080"
