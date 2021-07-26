@@ -3,9 +3,6 @@ services:
   front:
     container_name: react
     image: wldusdl34/myblogfront:latest
-    build:
-      context: .
-      dockerfile: ./myblog_front/Dockerfile
     restart: always
     ports:
     - "8080:8080"
@@ -13,9 +10,6 @@ services:
   back:
     container_name: server
     image: wldusdl34/myblogserver:latest
-    build:
-      context: .
-      dockerfile: ./myblog-server/Dockerfile
     restart: always
     ports:
       - "9090:9090"
@@ -23,9 +17,6 @@ services:
   nginx:
     container_name: nginx
     image: wldusdl34/myblognginx:latest
-    build:
-      context: .
-      dockerfile: ./myblog_nginx/Dockerfile
     restart: always
     ports:
       - "80:80"
