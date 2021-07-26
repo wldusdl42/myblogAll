@@ -1,4 +1,4 @@
-version: '3' // 파일 규격 버전
+version: '3' #파일 규격 버전
   services:
     front:
       container_name: react
