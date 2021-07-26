@@ -1,20 +1,11 @@
-# Dockerfile for node.js
-
-FROM node:12.18.0-alpine
-
-ENV DOCKERIZE_VERSION v0.2.0
-RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-
-RUN npm install -g nodemon
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-RUN npm install
-
+# syntax=docker/dockerfile:1
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
 COPY . .
-
-# RUN chmod +x docker-entrypoint.sh
-# ENTRYPOINT ./docker-entrypoint.sh
-
-EXPOSE 8081
+CMD ["flask", "run"]
