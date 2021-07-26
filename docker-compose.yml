@@ -5,7 +5,7 @@ services:
     image: wldusdl34/myblogfront:latest
     build:
       context: .
-      dockerfile: ./myblog_front/Dockerfile
+      dockerfile: ./Dockerfile
     restart: always
     ports:
     - "8080:8080"
@@ -15,7 +15,7 @@ services:
     image: wldusdl34/myblogserver:latest
     build:
       context: .
-      dockerfile: ./myblog-server/Dockerfile
+      dockerfile: ./Dockerfile
     restart: always
     ports:
       - "9090:9090"
@@ -25,7 +25,7 @@ services:
     image: wldusdl34/myblognginx:latest
     build:
       context: .
-      dockerfile: ./myblog_nginx/Dockerfile
+      dockerfile: ./Dockerfile
     restart: always
     ports:
       - "80:80"
