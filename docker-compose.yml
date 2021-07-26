@@ -4,7 +4,7 @@ services:
     container_name: react
     image: wldusdl34/myblogfront:latest
     build:
-      context: /usr/src/app
+      context: app
       dockerfile: Dockerfile
     restart: always
     ports:
