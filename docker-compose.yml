@@ -3,7 +3,9 @@ services:
   front:
     container_name: react
     image: wldusdl34/myblogfront:latest
-    build: ./myblog_front/
+    build: 
+      context: ./myblog_front
+      dockerfile: ./Dockerfile
     restart: always
     ports:
     - "8080:8080"
