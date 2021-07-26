@@ -1,4 +1,4 @@
-version: '3' #파일 규격 버전
+version: '3'
   services:
     front:
       container_name: react
@@ -9,23 +9,3 @@ version: '3' #파일 규격 버전
       restart: always
       ports:
       - "8080:8080"
-
-    back:
-      container_name: server
-      image: wldusdl34/myblogserver:latest
-      build:
-        context: .
-        dockerfile: ./myblog-server/Dockerfile
-      restart: always
-      ports:
-        - "9090:9090"
-
-    nginx:
-      container_name: nginx
-      image: wldusdl34/myblognginx:latest
-      build:
-        context: .
-        dockerfile: ./myblog_nginx/Dockerfile
-      restart: always
-      ports:
-        - "80:80"
