@@ -5,27 +5,7 @@ services:
     image: wldusdl34/myblogfront:latest
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     restart: always
     ports:
     - "8080:8080"
-    
-  back:
-    container_name: server
-    image: wldusdl34/myblogserver:latest
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    restart: always
-    ports:
-      - "9090:9090"
-
-  nginx:
-    container_name: nginx
-    image: wldusdl34/myblognginx:latest
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    restart: always
-    ports:
-      - "80:80"
