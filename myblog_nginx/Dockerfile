@@ -1,3 +1,4 @@
-FROM nginx-alpine
+FROM nginx:alpine
 MAINTAINER Jiyeon Kim <wldusdl34@gmail.com>
-COPY static-html-directory /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80

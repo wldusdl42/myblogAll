@@ -1,15 +1,22 @@
 version: '3' // 파일 규격 버전
-services: // 컨테이너들을 정의
-    web:
-        build:
-            context: ./myblog_front
-            dockerfile: Dockerfile
-        ports:
-            - "8080:8080"
-    # 웹 애플리케이션 설정
-    db:
-    # 데이터베이스 설정
-networks:
-  # 네트워크 설정
-volumes:
-  # 볼륨 설정
+  services:
+    front:
+      container_name: react
+      image: wldusdl34/myblogfront:latest
+      restart: always
+      ports:
+      - "8080:8080"
+
+    back:
+      container_name: server
+      image: wldusdl34/myblogserver:latest
+      restart: always
+      ports:
+        - "9090:9090"
+
+    nginx:
+      container_name: nginx
+      image: wldusdl34/myblognginx:latest
+      restart: always
+      ports:
+        - "80:80"
