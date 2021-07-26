@@ -1,11 +1,9 @@
 version: '3'
 services:
-  front:
-    container_name: react
-    image: wldusdl34/myblogfront:latest
-    build: 
-      context: .
-      dockerfile: ./Dockerfile
+  nginx:
+    container_name: nginx
+    image: wldusdl34/myblognginx:latest
+    build: .
     restart: always
     ports:
-    - "8080:8080"
+      - "80:80"
