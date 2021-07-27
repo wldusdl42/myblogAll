@@ -34,5 +34,5 @@ services:
       - /home/opc/docker/mysql/config:/etc/mysql/conf.d
     environment:
       - MYSQL_ROOT_PASSWORD=Dnflwlq@34
-      - MYSQL_USER=user (Mysql 사용자 계정)
-      - MYSQL_PASSWORD=Dnflwlq@34 (Mysql 사용자 계정 비밀번호)
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=Dnflwlq@34
