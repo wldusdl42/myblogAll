@@ -5,20 +5,14 @@ services:
     image: wldusdl34/myblogfront:latest
     restart: always
     ports:
-      - mode: host
-        protocol: tcp
-        published: 8080
-        target: 80
+    - "8080"
     
   back:
     container_name: server
     image: wldusdl34/myblogserver:latest
     restart: always
     ports:
-      - mode: host
-        protocol: tcp
-        published: 9090
-        target: 80
+      - "9090"
 
   nginx:
     container_name: nginx
