@@ -22,3 +22,17 @@ services:
     restart: always
     ports:
       - "80:80"
+
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    ports:
+      - "3306"
+    volumes:
+      - ./docker/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=sampledb
+      - POSTGRES_USER=sampleuser
+      - POSTGRES_PASSWORD=qwe123!@#
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8
