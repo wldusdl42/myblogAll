@@ -7,7 +7,7 @@ services:
     ports:
       - "8080"
     networks:
-      - default
+      - lns-network
     
   back:
     container_name: server
@@ -16,7 +16,7 @@ services:
     ports:
       - "9090"
     networks:
-      - default
+      - lns-network
 
   nginx:
     container_name: nginx
@@ -27,8 +27,8 @@ services:
     ports:
       - "80:80"
     networks:
-      - default
+      - lns-network
   
   networks:
-    default:
+    lns-network:
       name: myblogall_default
