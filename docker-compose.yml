@@ -6,8 +6,6 @@ services:
     restart: always
     ports:
     - "8080"
-    volumes: 
-      external: true
     
   back:
     container_name: server
@@ -15,8 +13,6 @@ services:
     restart: always
     ports:
       - "9090"
-    volumes: 
-      external: true
 
   nginx:
     container_name: nginx
@@ -26,5 +22,3 @@ services:
     restart: always
     ports:
       - "80:80"
-    volumes: 
-      external: true
