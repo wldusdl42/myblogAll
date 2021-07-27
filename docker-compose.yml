@@ -31,4 +31,4 @@ services:
   
 networks:
   lns-network:
-    driver: myblogall_default
+    name: myblogall_default
