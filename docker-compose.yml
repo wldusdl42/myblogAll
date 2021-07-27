@@ -29,6 +29,6 @@ services:
     networks:
       - lns-network
   
-  networks:
-    lns-network:
-      name: myblogall_default
+networks:
+  lns-network:
+    driver: myblogall_default
