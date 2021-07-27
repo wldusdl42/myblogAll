@@ -30,4 +30,5 @@ services:
       - default
   
   networks:
-    default: myblogall_default
+    default:
+      name: myblogall_default
