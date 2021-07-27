@@ -29,4 +29,4 @@ services:
 
 networks:
   lns-network:
-    driver: myblogall_default
+    driver: bridge
