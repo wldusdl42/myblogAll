@@ -23,16 +23,16 @@ services:
     ports:
       - "80:80"
 
-  db:
-    container_name: db
-    image: postgres
+  mysql:
+    container_name: mysql
+    image: mysql:latest
     restart: always
     ports:
       - "3306"
     volumes:
-      - ./docker/data:/var/lib/postgresql/data
+      - /home/opc/docker/mysql/data:/var/lib/mysql
+      - /home/opc/docker/mysql/config:/etc/mysql/conf.d
     environment:
-      - POSTGRES_DB=sampledb
-      - POSTGRES_USER=sampleuser
-      - POSTGRES_PASSWORD=qwe123!@#
-      - POSTGRES_INITDB_ARGS=--encoding=UTF-8
+      - MYSQL_ROOT_PASSWORD=Dnflwlq@34
+      - MYSQL_USER=user (Mysql 사용자 계정)
+      - MYSQL_PASSWORD=Dnflwlq@34 (Mysql 사용자 계정 비밀번호)
