@@ -16,7 +16,9 @@ services:
 
   nginx:
     container_name: nginx
-    image: wldusdl34/myblognginx:latest
+    build:
+      context: ./myblog_nginx
+      dockerfile: Dockerfile
     restart: always
     ports:
       - "80:80"
