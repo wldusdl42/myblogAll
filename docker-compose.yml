@@ -6,8 +6,6 @@ services:
     restart: always
     ports:
       - "8080"
-    networks:
-      - lns-network
     
   back:
     container_name: server
@@ -15,8 +13,6 @@ services:
     restart: always
     ports:
       - "9090"
-    networks:
-      - lns-network
 
   nginx:
     container_name: nginx
@@ -26,9 +22,3 @@ services:
     restart: always
     ports:
       - "80:80"
-    networks:
-      - lns-network
-  
-networks:
-  lns-network:
-    name: myblogall_default
