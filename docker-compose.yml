@@ -30,7 +30,7 @@ services:
     ports:
       - "3306"
     volumes:
-      - d:/dev/docker/mysql/mysql-db01
+      - /home/opc/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=Dnflwlq@34
     command:
